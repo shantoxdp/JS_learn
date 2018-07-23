@@ -11,7 +11,7 @@ y;
 var z= x('Rahman');
 z;
 
-//another eample
+//another example
 
 var a = caller()('Sol Khan');
 a;
