@@ -1,80 +1,54 @@
+// var _ = require('underscore');
 
-function sayName(name) {
-    return 'Hello, ' + name;
+// var arr = [3, 4, 5, 7, 9,];
+
+// _.each(arr, function(elem){
+//     console.log(elem);
+//     console.log('Hello Shanto');
+
+// });
+
+function sayName(name){
+    return 'Hello,' + name;
 }
-
-// Todays Topics
-
-// 1. A Function can be stored in a Variable * Passed
 
 var hello = sayName;
-//  var fun = sayName('HM Nayem');
 
-//  console.log(hello);
-//  console.log(fun);
-
-// console.log(hello('HM Nayem'));
-
+// console.log(hello('Shanto'));
 var anotherHello = hello;
+// 
+var lastHello = anotherHello;
+console.log(lastHello('Sol_khan')); 
 
-console.log(anotherHello('HM Nayem'));
+var arr = [1,3,5,7];
 
+arr.push(anotherHello)
+arr.push(lastHello)
 
+console.log(arr)
 
+var sum = 30 + (function(){return 20})();
 
-// 2. A Function can be stored in an Array * Passed
-var arr = [1, 2, 3, anotherHello];
-arr.push(sayName)
-console.log(arr);
-
-
-// 3. A Function can be stored as an Object Field or Property * Passed
-var person = {
-    name: 'HM Nayem',
-    sayName: hello,
-    print: function () {
-        console.log('Hi');
-    }
-}
-
-console.log(person);
-
-
-person
-
-// 4. We can create function as needed  * Passed
-
-var sum = 10 + (function () {
-    return 50
-})();
 sum;
 
-// 5. We can pass function as an arguments  * passed
 
-function wow(name, fun) {
+function wow (name,fun){
     return fun(name);
 }
-
-var result = wow('HM Nayem', sayName);
+var result = wow('Shanto',sayName);
 console.log(result);
 
-
-// 6. We can return function from another function
-
-function base(b) {
-    return function (n) {
+function base(b){
+    return function (n){
         var result = 1;
 
-        for (var i = 0; i < b; i++) {
-            result *= n;
-        }
 
+        for (var i=0; i<b; i++){
+            result *=n;
+
+        }
         return result;
     }
 }
-
-//  var power = base(2);
-//  var result = power(5);
-
-var result = base(3)(5);
-result
+var result = base (3)(5);
+result; 
