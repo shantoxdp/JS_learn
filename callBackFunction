@@ -1,0 +1,47 @@
+// function hello(name,print){
+//     print(name);
+// }
+
+// hello ('Shanto', function(name){
+//     console.log('Hello '+ name);
+// });
+// hello('Shnato',function(name){
+//     console.log('Hi,How are you '+ name +'?');
+// })
+
+// var me= {
+//     name:  'shanto',
+//     age:19,
+//     email:'shantoxdp@gmail.com'
+// }
+
+// function printMySelf(person, callback){
+//     console.log('person: '+ person.name +' (' +person.age +')');
+//     if (person.age>=18){
+//         callback(person.email);
+//     } else {
+//         console.log('you are to small');
+//         }
+// }
+
+// printMySelf(me, function(email){
+//     console.log('Email sent to ' +email);
+      
+// });
+
+
+function print(data, callback1, callback2){
+    console.log('Original Data: '+ data);
+    callback1(data);
+    callback2(data);
+}
+
+print('Shanto rahman here' , function(data){
+    var data = data.toUpperCase();
+    console.log('UpperCase: '+data);
+
+}, function(data){
+    var data = data.toLowerCase();
+    console.log('Uppercase: '+ data);
+    console.log('Length: '+data.length);
+});
